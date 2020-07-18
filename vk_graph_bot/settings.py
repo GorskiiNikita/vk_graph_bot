@@ -25,7 +25,7 @@ SECRET_KEY = 's*o(o)p*^h&j8zlgwyj_oe$k^0eox@e=1*f2_vp2=v5joyl(=+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ff4a618f6731.ngrok.io', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'core'
 ]
 
 MIDDLEWARE = [
@@ -123,3 +124,5 @@ STATIC_URL = '/static/'
 
 TELEGRAM_BOT_TOKEN = None
 ENDPOINT_URL = None
+
+ADMIN_ID = None
