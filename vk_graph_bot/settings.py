@@ -25,7 +25,7 @@ SECRET_KEY = 's*o(o)p*^h&j8zlgwyj_oe$k^0eox@e=1*f2_vp2=v5joyl(=+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ff4a618f6731.ngrok.io', '127.0.0.1']
+ALLOWED_HOSTS = ['df7273e435c1.ngrok.io', '127.0.0.1']
 
 
 # Application definition
@@ -122,7 +122,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-TELEGRAM_BOT_TOKEN = None
-ENDPOINT_URL = None
+TELEGRAM_BOT_TOKEN = '1396921316:AAH_eRL6VSOHwVTPKxU40aR2seLw3_6xhCI'
+ENDPOINT_URL = 'https://df7273e435c1.ngrok.io'
 
-ADMIN_ID = None
+ADMIN_ID = 742742965
+
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Europe/Moscow'

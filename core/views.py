@@ -29,9 +29,16 @@ def telegram_hook(request):
         try:
             vk_id = int(text.split()[1])
             if command == '/user_graph':
-                invoke_telegram('sendMessage', chat_id=update['message']['chat']['id'], text=f'id юзера {vk_id}')
+                with open('store/1.jpg', 'rb') as f:
+                    photo = f.read()
+                invoke_telegram('sendPhoto', photo=photo, chat_id=update['message']['chat']['id'])
+
                 Logging.objects.create(user_id=update['message']['chat']['id'], command='user_graph')
             elif command == '/group_graph':
+
+                from core.tasks import test
+                test.delay(update['message']['chat']['id'])
+
                 invoke_telegram('sendMessage', chat_id=update['message']['chat']['id'], text=f'id группы {vk_id}')
                 Logging.objects.create(user_id=update['message']['chat']['id'], command='group_graph')
 
